@@ -43,6 +43,8 @@ ram.runtime = "50M"
     [resources.sources]
 
         [resources.sources.main]
+        in_subdir = false
+        extract = false
         url = "https://ctfreak.com/download/release/latest/linux/amd64"
         sha256 = "b71f875d4385933b6c83a840c8d370ce9447d499d2db03ce6d0125fb854475aa"
 
