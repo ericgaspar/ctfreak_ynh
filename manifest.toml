@@ -19,7 +19,7 @@ admindoc = "https://ctfreak.com/docs"
 
 [integration]
 yunohost = ">= 11.2"
-architectures = "all"
+architectures = ["amd64", "armhf"]
 multi_instance = true
 
 ldap = false
@@ -45,9 +45,11 @@ ram.runtime = "50M"
         [resources.sources.main]
         in_subdir = false
         extract = false
-        url = "https://ctfreak.com/download/release/latest/linux/amd64"
-        sha256 = "b71f875d4385933b6c83a840c8d370ce9447d499d2db03ce6d0125fb854475aa"
         rename = "ctfreak"
+        amd64.url = "https://ctfreak.com/download/release/latest/linux/amd64"
+        amd64.sha256 = "b71f875d4385933b6c83a840c8d370ce9447d499d2db03ce6d0125fb854475aa"
+        armhf.url = "https://ctfreak.com/download/release/latest/linux/arm"
+        armhf.sha256 = "380126346abf13fa68894218652efd3a1dcbc1b7681b72770b31077d48b534d5"
 
     [resources.system_user]
 
