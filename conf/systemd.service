@@ -1,5 +1,5 @@
 [Unit]
-Description=Small description of the service
+Description=CtFreak server
 After=network.target
 
 [Service]
@@ -7,9 +7,10 @@ Type=simple
 User=__APP__
 Group=__APP__
 WorkingDirectory=__INSTALL_DIR__/
-ExecStart=__INSTALL_DIR__/script
-StandardOutput=append:/var/log/__APP__/__APP__.log
-StandardError=inherit
+ExecStart=__INSTALL_DIR__/ctfreak run -n __PORT__
+Restart=on-failure
+LimitNOFILE=100000
+LimitNOFILESoft=100000
 
 # Sandboxing options to harden security
 # Depending on specificities of your service/app, you may need to tweak these
